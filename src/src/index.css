@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pixel-font {
+  background-color: black;
+  color: white;
+  /* font-smooth: never; */
+  /* -webkit-font-smoothing: none; */
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.default-gradient {
+  background: linear-gradient(90deg, #0d2289 0%, #06093b 100%);
+}
+
+.container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    'A B B C C D'
+    'E E E E F F'
+    'E E E E F F'
+    'G G G G . .';
+  width: 700px;
+  height: 700px;
+}
+
+.container > .child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+/* pic */
+.child:nth-child(1) {
+  grid-area: A;
+  background-color: #00f;
+}
+
+/* health */
+.child:nth-child(2) {
+  grid-area: B;
+  background-color: #0f0;
+}
+
+/* equip big */
+.child:nth-child(3) {
+  grid-area: C;
+  background-color: #f00;
+}
+
+/* equip small */
+.child:nth-child(4) {
+  grid-area: D;
+  background-color: #ff0;
+}
+
+/* active box */
+.child:nth-child(5) {
+  grid-area: E;
+  background-color: #1a3020; /* calculated correct green */
+}
+
+/* inventory */
+.child:nth-child(6) {
+  grid-area: F;
+  background-color: #900;
+}
+
+/* caption */
+.child:nth-child(7) {
+  grid-area: G;
+  background-color: #090;
+}
+
+.child:nth-child(8) {
+  grid-area: H;
+  background-color: #009;
+}
