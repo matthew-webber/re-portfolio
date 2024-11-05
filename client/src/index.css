@@ -16,15 +16,16 @@
 
 .container {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-auto-columns: minmax(100px, 1fr);
+  grid-template-rows: 50px repeat(4, 100px); /* Explicit sizing for 5 rows */
   grid-template-areas:
-    'A B B C C D'
-    'E E E E F F'
-    'E E E E F F'
-    'G G G G . .';
-  width: 700px;
-  height: 700px;
+    'A B C D E F' /* New first row */
+    'G H H I I J' /* Adjusted previous rows */
+    'K K K K L L'
+    'K K K K L L'
+    'M M M M . .';
+  width: 1440px;
+  height: 1080px;
 }
 
 .container > .child {
@@ -62,7 +63,7 @@
 /* active box */
 .child:nth-child(5) {
   grid-area: E;
-  background-color: #1a3020; /* calculated correct green */
+  background-color: #099; /* calculated correct green */
 }
 
 /* inventory */
@@ -74,10 +75,35 @@
 /* caption */
 .child:nth-child(7) {
   grid-area: G;
-  background-color: #090;
+  background-color: gray;
 }
 
 .child:nth-child(8) {
   grid-area: H;
+  background-color: lime;
+}
+
+.child:nth-child(9) {
+  grid-area: I;
+  background-color: orange;
+}
+
+.child:nth-child(10) {
+  grid-area: J;
   background-color: #009;
+}
+
+.child:nth-child(11) {
+  grid-area: K;
+  background-color: #1a3020;
+}
+
+.child:nth-child(12) {
+  grid-area: L;
+  background-color: #099;
+}
+
+.child:nth-child(13) {
+  grid-area: M;
+  background-color: #990;
 }
